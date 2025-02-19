@@ -1,41 +1,164 @@
-Objetivo General:
-Crear una aplicación de monitoreo de temperatura en tiempo real.
-Funcionalidades principales:
-Registro y Login de usuarios.
-Envío de alertas por email cuando la temperatura supere un umbral (al email del usuario registrado).
-Visualización de la temperatura con gráficos en tiempo real.
-Botón para descargar un informe en PDF con las temperaturas registradas durante 1 minuto.
-Tecnologías:
+Manual de Instalación y Uso - Monitoreo Temperatura
+
+Introducción
+
+"Monitoreo Temperatura" es una aplicación de monitoreo de temperatura en tiempo real. Permite registrar usuarios, visualizar datos en gráficos en vivo, recibir alertas por correo cuando la temperatura supera un umbral y descargar informes en PDF.
+
+Tecnologías Utilizadas
+
 Frontend: React.js (con Vite) + Tailwind CSS + Chart.js
+
 Backend: Node.js (Express) + Socket.IO + Nodemailer
-Base de Datos: NoSQL (Se almacenarán usuarios en memoria temporalmente para simplificar).
-Extras: jwt para autenticación y bcrypt para encriptar contraseñas.
-Paso 1: Configuración Inicial del Proyecto
-Crear el proyecto con Vite (React):
 
-npm create vite@latest monitoreo-temperatura
-cd monitoreo-temperatura
+Base de Datos: NoSQL (almacenamiento en memoria)
+
+Extras: JWT para autenticación y bcrypt para encriptar contraseñas
+
+Requisitos Previos
+
+Antes de comenzar, asegúrate de tener instalado:
+
+Node.js (incluye npm)
+
+Git (opcional pero recomendado)
+
+Instalación del Proyecto
+
+1. Clonar el Repositorio
+
+Si el código está en GitHub, clónalo con:
+
+ git clone https://github.com/tu-usuario/monitoreo-temperatura.git
+ cd monitoreo-temperatura
+
+Si tienes los archivos en un .zip, simplemente extrae la carpeta en tu computadora.
+
+2. Configurar el Backend
+
+Navega a la carpeta del backend:
+
+cd backend
+
+Instala las dependencias necesarias:
+
 npm install
-Instalar dependencias necesarias:
 
-npm install axios react-router-dom socket.io-client chart.js react-chartjs-2 tailwindcss postcss autoprefixer
-npm install --save-dev vite
-npm install bcrypt nodemailer jsonwebtoken socket.io express cors
-Configurar Tailwind CSS:
+Las dependencias instaladas incluyen:
 
-npx tailwindcss init
-Paso 2: Estructura del Proyecto
-Frontend (carpeta src):
+axios
 
-App.jsx – Rutas de la aplicación.
-Register.jsx – Registro de usuarios.
-Login.jsx – Inicio de sesión.
-Dashboard.jsx – Gráfico de temperatura.
-components/TemperatureChart.jsx – Componente para visualizar gráficas.
-Backend (crear carpeta backend):
+bcrypt
 
-server.js – Servidor principal con Express y Socket.IO.
-Paso 3: Desarrollo Paso a Paso
-Iniciaremos configurando el backend (server.js) con la lógica de simulación de temperatura y WebSockets.
-Luego, pasaremos al frontend (Register, Login, y Dashboard).
-Finalmente, implementaremos la funcionalidad de alertas por email y generación de PDF.
+cors
+
+express
+
+jsonwebtoken
+
+nodemailer
+
+pg
+
+socket.io
+
+Inicia el servidor backend:
+
+npm start
+
+Esto iniciará el servidor en http://localhost:5000.
+
+3. Configurar el Frontend
+
+Abre otra terminal y ve a la carpeta del frontend:
+
+cd ../frontend
+
+Instala las dependencias:
+
+npm install
+
+Las dependencias instaladas incluyen:
+
+axios
+
+chart.js
+
+chartjs-plugin-annotation
+
+pusher-js
+
+react
+
+react-chartjs-2
+
+react-dom
+
+react-router-dom
+
+socket.io-client
+
+Además, el entorno de desarrollo incluye:
+
+@eslint/js
+
+@types/react
+
+@types/react-dom
+
+@vitejs/plugin-react
+
+autoprefixer
+
+eslint
+
+eslint-plugin-react
+
+eslint-plugin-react-hooks
+
+eslint-plugin-react-refresh
+
+globals
+
+postcss
+
+tailwindcss
+
+vite
+
+Inicia la aplicación:
+
+npm run dev
+
+Esto iniciará la interfaz en http://localhost:5173.
+
+Uso de la Aplicación
+
+1. Registro e Inicio de Sesión
+
+Accede a http://localhost:5173
+
+Crea una cuenta nueva o inicia sesión con una existente.
+
+2. Visualización de Datos
+
+Una vez autenticado, se mostrarán gráficos en tiempo real con la temperatura.
+
+3. Alertas de Temperatura
+
+Se enviará un correo si la temperatura supera un umbral definido.
+
+4. Descargar Reportes
+
+Puedes descargar un informe en PDF con las temperaturas registradas en el último minuto.
+
+Solución de Problemas
+
+Error de módulo faltante: Asegúrate de ejecutar npm install en cada carpeta (backend y frontend).
+
+Backend no responde: Verifica que el puerto 5000 esté disponible y que npm start se esté ejecutando.
+
+Frontend no carga: Asegúrate de que el backend esté corriendo antes de iniciar el frontend.
+
+Contacto y Contribución
+
+Si deseas mejorar el proyecto o tienes dudas, contacta a ivan.mejiasm@gmail.com o crea un issue en GitHub.
