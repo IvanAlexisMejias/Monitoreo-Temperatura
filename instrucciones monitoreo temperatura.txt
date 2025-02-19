@@ -1,0 +1,41 @@
+Objetivo General:
+Crear una aplicación de monitoreo de temperatura en tiempo real.
+Funcionalidades principales:
+Registro y Login de usuarios.
+Envío de alertas por email cuando la temperatura supere un umbral (al email del usuario registrado).
+Visualización de la temperatura con gráficos en tiempo real.
+Botón para descargar un informe en PDF con las temperaturas registradas durante 1 minuto.
+Tecnologías:
+Frontend: React.js (con Vite) + Tailwind CSS + Chart.js
+Backend: Node.js (Express) + Socket.IO + Nodemailer
+Base de Datos: NoSQL (Se almacenarán usuarios en memoria temporalmente para simplificar).
+Extras: jwt para autenticación y bcrypt para encriptar contraseñas.
+Paso 1: Configuración Inicial del Proyecto
+Crear el proyecto con Vite (React):
+
+npm create vite@latest monitoreo-temperatura
+cd monitoreo-temperatura
+npm install
+Instalar dependencias necesarias:
+
+npm install axios react-router-dom socket.io-client chart.js react-chartjs-2 tailwindcss postcss autoprefixer
+npm install --save-dev vite
+npm install bcrypt nodemailer jsonwebtoken socket.io express cors
+Configurar Tailwind CSS:
+
+npx tailwindcss init
+Paso 2: Estructura del Proyecto
+Frontend (carpeta src):
+
+App.jsx – Rutas de la aplicación.
+Register.jsx – Registro de usuarios.
+Login.jsx – Inicio de sesión.
+Dashboard.jsx – Gráfico de temperatura.
+components/TemperatureChart.jsx – Componente para visualizar gráficas.
+Backend (crear carpeta backend):
+
+server.js – Servidor principal con Express y Socket.IO.
+Paso 3: Desarrollo Paso a Paso
+Iniciaremos configurando el backend (server.js) con la lógica de simulación de temperatura y WebSockets.
+Luego, pasaremos al frontend (Register, Login, y Dashboard).
+Finalmente, implementaremos la funcionalidad de alertas por email y generación de PDF.
