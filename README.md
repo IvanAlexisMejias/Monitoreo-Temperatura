@@ -54,11 +54,11 @@ Dependencias principales:
 - pg
 - socket.io
 
+
 Inicia el servidor backend:
 
 ```bash
-npm start
-```
+node server.js
 
 El servidor se ejecutará en [http://localhost:5000](http://localhost:5000).
 
