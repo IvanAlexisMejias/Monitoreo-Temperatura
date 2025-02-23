@@ -59,6 +59,7 @@ Inicia el servidor backend:
 
 ```bash
 node server.js
+```
 
 El servidor se ejecutará en [http://localhost:5000](http://localhost:5000).
 
